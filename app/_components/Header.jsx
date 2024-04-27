@@ -21,6 +21,11 @@ function Header() {
       name: "Page d'accueil",
       path: "/",
     },
+    {
+      id: 2,
+      name: "médecins",
+      path: "/search/Dentiste",
+    },
   ];
 
   const { user } = useKindeBrowserClient();

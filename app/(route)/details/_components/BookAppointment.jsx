@@ -76,87 +76,96 @@ function BookAppointment({ doctor }) {
     return day <= new Date();
   };
   return (
-    <Dialog>
-      <DialogTrigger>
-        <Button className="mt-3 rounded-full">Prendre rendez-vous</Button>
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Prendre rendez-vous</DialogTitle>
-          <DialogDescription>
-            <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 mt-5">
-                {/* Calender  */}
-                <div className="flex flex-col   gap-3 items-baseline">
-                  <h2 className="flex gap-2 items-center">
-                    <CalendarDays className="text-primary h-5 w-5" />
-                    Sélectionner une date
-                  </h2>
-                  <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={setDate}
-                    disabled={isPastDay}
-                    className="rounded-md border"
-                  />
-                </div>
-                {/* Time Slot  */}
-                <div className=" mt-3 md:mt-0">
-                  <h2 className="flex gap-2 items-center mb-3">
-                    <Clock className="text-primary h-5 w-5" />
-                    Sélectionnez un créneau horaire
-                  </h2>
-                  <div
-                    className="grid grid-cols-3 gap-2 border 
+    <>
+      <div className="flex items-center gap-2">
+        <Dialog>
+          <DialogTrigger>
+            <Button className="mt-3 rounded-full">Prendre rendez-vous</Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Prendre rendez-vous</DialogTitle>
+              <DialogDescription>
+                <div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 mt-5">
+                    {/* Calender  */}
+                    <div className="flex flex-col   gap-3 items-baseline">
+                      <h2 className="flex gap-2 items-center">
+                        <CalendarDays className="text-primary h-5 w-5" />
+                        Sélectionner une date
+                      </h2>
+                      <Calendar
+                        mode="single"
+                        selected={date}
+                        onSelect={setDate}
+                        disabled={isPastDay}
+                        className="rounded-md border"
+                      />
+                    </div>
+                    {/* Time Slot  */}
+                    <div className=" mt-3 md:mt-0">
+                      <h2 className="flex gap-2 items-center mb-3">
+                        <Clock className="text-primary h-5 w-5" />
+                        Sélectionnez un créneau horaire
+                      </h2>
+                      <div
+                        className="grid grid-cols-3 gap-2 border 
                         rounded-lg p-5"
-                  >
-                    {timeSlot?.map((item, index) => (
-                      <h2
-                        onClick={() => setSelectedTimeSlot(item.time)}
-                        className={`p-2 border cursor-pointer
+                      >
+                        {timeSlot?.map((item, index) => (
+                          <h2
+                            onClick={() => setSelectedTimeSlot(item.time)}
+                            className={`p-2 border cursor-pointer
                             text-center hover:bg-primary hover:text-white
                             rounded-full
                             ${
                               item.time == selectedTimeSlot &&
                               "bg-primary text-white"
                             }`}
-                      >
-                        {item.time}
-                      </h2>
-                    ))}
+                          >
+                            {item.time}
+                          </h2>
+                        ))}
+                      </div>
+                    </div>
                   </div>
+                  <Textarea
+                    className="mt-3"
+                    placeholder="Note"
+                    onChange={(e) => setNote(e.target.value)}
+                  />
                 </div>
-              </div>
-              <Textarea
-                className="mt-3"
-                placeholder="Note"
-                onChange={(e) => setNote(e.target.value)}
-              />
-            </div>
-          </DialogDescription>
-        </DialogHeader>
-        <DialogFooter className="sm:justify-end">
-          <DialogClose asChild>
-            <>
-              <Button
-                type="button"
-                className="text-red-500 border-red-500"
-                variant="outline"
-              >
-                Fermer
-              </Button>
-              <Button
-                type="button"
-                disabled={!(date && selectedTimeSlot)}
-                onClick={() => saveBooking()}
-              >
-                Soumettre
-              </Button>
-            </>
-          </DialogClose>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+              </DialogDescription>
+            </DialogHeader>
+            <DialogFooter className="sm:justify-end">
+              <DialogClose asChild>
+                <>
+                  <Button
+                    type="button"
+                    className="text-red-500 border-red-500"
+                    variant="outline"
+                  >
+                    Fermer
+                  </Button>
+                  <Button
+                    type="button"
+                    disabled={!(date && selectedTimeSlot)}
+                    onClick={() => saveBooking()}
+                  >
+                    Soumettre
+                  </Button>
+                </>
+              </DialogClose>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+        <div className="mt-3">
+          <Button variant="outline" className="rounded-full">
+            Facetime maintenant
+          </Button>
+        </div>
+      </div>
+    </>
   );
 }
 
