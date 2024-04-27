@@ -16,12 +16,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={outfit.className}>
         <div className="md:px-20">
-          <Header/>
+          <Header />
           {children}
           <Toaster />
         </div>
         {/* <Footer/> */}
-        </body>
+      </body>
     </html>
   );
 }
