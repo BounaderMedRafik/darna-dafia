@@ -16,6 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import GlobalApi from "@/app/_utils/GlobalApi";
 import { toast } from "sonner";
+import Link from "next/link";
 
 function BookAppointment({ doctor }) {
   const [date, setDate] = useState(new Date());
@@ -67,7 +68,7 @@ function BookAppointment({ doctor }) {
         GlobalApi.sendEmail(data).then((resp) => {
           console.log(resp);
         });
-        toast("Booking Confirmation sent on Email");
+        toast("Confirmation de réservation envoyée par email");
       }
     });
   };
@@ -114,6 +115,7 @@ function BookAppointment({ doctor }) {
                       >
                         {timeSlot?.map((item, index) => (
                           <h2
+                            key={index}
                             onClick={() => setSelectedTimeSlot(item.time)}
                             className={`p-2 border cursor-pointer
                             text-center hover:bg-primary hover:text-white
@@ -161,7 +163,7 @@ function BookAppointment({ doctor }) {
         </Dialog>
         <div className="mt-3">
           <Button variant="outline" className="rounded-full">
-            Facetime maintenant
+            <Link href={"/details"}>Facetime maintenant</Link>
           </Button>
         </div>
       </div>
