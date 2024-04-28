@@ -13,6 +13,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import AddPatient from "./AddPatient";
 
 function Header() {
   const Menu = [
@@ -61,46 +62,53 @@ function Header() {
       </div>
 
       {user ? (
-        <Popover>
-          <PopoverTrigger>
-            {user?.picture ? (
-              <Image
-                src={user?.picture}
-                alt="profile-image"
-                width={40}
-                height={40}
-                className="rounded-full"
-              />
-            ) : (
-              <Image
-                src={
-                  "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
-                }
-                alt="profile-image"
-                width={40}
-                height={40}
-                className="rounded-full"
-              />
-            )}
-          </PopoverTrigger>
-          <PopoverContent className="w-44">
-            <ul className="flex  flex-col gap-2">
-              <Link
-                href={"/my-booking"}
-                className="cursor-pointer
+        <>
+          <div className="flex items-center gap-3">
+            <Popover>
+              <PopoverTrigger>
+                {user?.picture ? (
+                  <Image
+                    src={user?.picture}
+                    alt="profile-image"
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  />
+                ) : (
+                  <Image
+                    src={
+                      "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+                    }
+                    alt="profile-image"
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  />
+                )}
+              </PopoverTrigger>
+              <PopoverContent className="w-44">
+                <ul className="flex  flex-col gap-2">
+                  <Link
+                    href={"/my-booking"}
+                    className="cursor-pointer
              hover:bg-slate-100 p-2 rounded-md"
-              >
-                Ma réservation
-              </Link>
-              <li
-                className="cursor-pointer
+                  >
+                    Ma réservation
+                  </Link>
+                  <li
+                    className="cursor-pointer
              hover:bg-slate-100 p-2 rounded-md"
-              >
-                <LogoutLink>Se déconnecter</LogoutLink>
-              </li>
-            </ul>
-          </PopoverContent>
-        </Popover>
+                  >
+                    <LogoutLink>Se déconnecter</LogoutLink>
+                  </li>
+                </ul>
+              </PopoverContent>
+            </Popover>
+            <div>
+              <AddPatient />
+            </div>
+          </div>
+        </>
       ) : (
         <LoginLink>
           {" "}
