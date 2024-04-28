@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import { toast } from "sonner";
 
 const questions = [
   {
@@ -140,6 +141,15 @@ const AddPatient = () => {
                   </DropdownMenuRadioGroup>
                 </DropdownMenuContent>
               </DropdownMenu>
+            </div>
+            <div className="mt-7">
+              <Button
+                onClick={() => {
+                  toast.success("ajouté avec succès");
+                }}
+              >
+                Ajouter un patient
+              </Button>
             </div>
           </div>
         </DialogContent>
