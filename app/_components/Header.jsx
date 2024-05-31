@@ -58,6 +58,17 @@ function Header() {
               </li>
             </Link>
           ))}
+          {user ? (
+            <Link href="/atelier">
+              <li
+                className="hover:text-primary
+                    cursor-pointer hover:scale-105
+                    transition-all ease-in-out"
+              >
+                Atelier
+              </li>
+            </Link>
+          ) : null}
         </ul>
       </div>
 
