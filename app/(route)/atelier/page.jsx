@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-
 const EnfantAt = [
   {
     name: "Écriture",
@@ -42,7 +41,9 @@ const SubBtn = () => {
     <div className="mt-5">
       <button
         onClick={() => setClicked(!clicked)}
-        className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring h-10 px-4 py-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90"
+        className={cn(
+          "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring h-10 px-4 py-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90"
+        )}
       >
         {clicked ? "Abonnment succes" : "Abonne"}
       </button>
