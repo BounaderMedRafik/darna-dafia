@@ -132,8 +132,105 @@ const LesCours = () => {
   );
 };
 
+const eldcours = [
+  {
+    name: "Mathematics – Transition Mathematics for Seniors",
+    link: "https://wvde.us/wp-content/uploads/2018/10/Standards-Transition-Mathematics-for-Seniors.pdf",
+  },
+  {
+    name: "Principles of Environmental Physics",
+    link: "https://denning.atmos.colostate.edu/readings/Monteith.and.Unsworth.4thEd.pdf",
+  },
+];
+
+const ELdercours = () => {
+  return (
+    <div className="my-10">
+      <div className="text-4xl font-bold mb-5">Les cours pour Les aînés</div>
+      <div className=" mt-10 flex flex-col gap-2">
+        {eldcours.map((item, i) => (
+          <a
+            target="_blank"
+            href={item.link}
+            className="p-5 hover:text-primary transition-all w-full max-w-4xl hover:opacity-80 flex items-center justify-between py-4 mx-auto  rounded-lg  border border-black/20"
+          >
+            <div className="font-semibold">{item.name}</div>
+            <div className="text-xs flex items-center justify-center gap-2">
+              Check it now
+              <ArrowRight size={15} />
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const elderAt = [
+  {
+    name: "peinture",
+    picture:
+      "https://plus.unsplash.com/premium_photo-1664300957495-3acbdca9a658?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    desc: "Un Après-midi Créatif : Initiation à la Peinture pour les Aînés",
+  },
+  {
+    name: "Quran",
+    picture:
+      "https://plus.unsplash.com/premium_photo-1678038362319-2b1ec2d670db?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    desc: "Créer un environnement d'apprentissage paisible",
+  },
+  {
+    name: "Danse",
+    picture:
+      "https://images.unsplash.com/photo-1524117853209-a2fcab240719?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    desc: "Un Bal Enchanteur : Apprendre à Danser pour les Seniors",
+  },
+  {
+    name: "musique ",
+    picture:
+      "https://images.unsplash.com/photo-1523286409336-3793cb494c75?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    desc: "L'Harmonie des Âges : Initier les Aînés à la Musique",
+  },
+  {
+    name: "Yoga ",
+    picture:
+      "https://images.unsplash.com/photo-1512291313931-d4291048e7b6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    desc: "Enseigner le Yoga aux Aînés",
+  },
+  {
+    name: "mediation ",
+    picture:
+      "https://images.unsplash.com/photo-1602192509154-0b900ee1f851?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    desc: "Mediation profissionel avec Aînés",
+  },
+];
+
 const ELderSection = () => {
-  return <div>helo</div>;
+  return (
+    <div>
+      <div className="text-4xl font-bold mb-5">Atelier Pour aîné</div>
+      <div className=" grid grid-cols-1 p-5 md:p-0 md:grid-cols-4 gap-2 ">
+        {elderAt.map((item, i) => (
+          <div
+            className="w-full  max-h-[350px] rounded-lg overflow-hidden hover:opacity-90 shadow-lg border border-black/20"
+            key={i}
+          >
+            <img className=" h-1/2 w-full object-cover" src={item.picture} />
+            <div className="p-4">
+              <div className="text-xl font-semibold">{item.name}</div>
+              <div className="text-sm font-light mt-2">{item.desc}</div>
+              <div>
+                <SubBtn />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div>
+        <ELdercours />
+      </div>
+    </div>
+  );
 };
 
 export default page;

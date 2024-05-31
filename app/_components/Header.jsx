@@ -59,13 +59,13 @@ function Header() {
             </Link>
           ))}
           {user ? (
-            <Link href="/atelier">
+            <Link href="/education">
               <li
                 className="hover:text-primary
                     cursor-pointer hover:scale-105
                     transition-all ease-in-out"
               >
-                Atelier
+                Education
               </li>
             </Link>
           ) : null}
