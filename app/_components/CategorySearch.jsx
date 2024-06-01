@@ -25,10 +25,7 @@ function CategorySearch() {
         className="font-bold
         text-4xl tracking-wide"
       >
-        Rechercher des <span className="text-blue-500">médecins</span>
-      </h2>
-      <h2 className="text-gray-500 text-xl">
-        Recherchez votre médecin et prenez rendez-vous en un clic
+        Rechercher un <span className="text-blue-500">service</span>
       </h2>
 
       <div className="flex w-full mt-3 max-w-sm items-center space-x-2">

@@ -10,7 +10,7 @@ function Hero() {
           <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
             <Image
               alt=""
-              src="/doctors.jpg"
+              src="/granny.png"
               width={800}
               height={800}
               className="absolute inset-0 h-full
@@ -22,12 +22,12 @@ function Hero() {
           <div className="lg:py-24">
             <h2 className="text-4xl font-bold sm:text-4xl">
               Trouvez et prenez rendez-vous avec vos{" "}
-              <span className="text-blue-500">médecins</span> préférés
+              <span className="text-blue-500">services</span> préférés
             </h2>
 
             <p className="mt-4 text-gray-500">
-              Découvrez et planifiez des rendez-vous avec vos médecins préférés
-              pour des services de santé complets et personnalisés
+              Découvrez et planifiez des rendez-vous avec vos proffisionells
+              préférés pour des services de santé complets et personnalisés
             </p>
 
             <Button className="mt-10">Explorez maintenant</Button>
